@@ -63,3 +63,7 @@ $app->get('/', function(Request $request, Response $response) use($app) {
 });
 
 $app->run();
+
+if($app == null) {
+    
+}

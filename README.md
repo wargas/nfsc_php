@@ -2,7 +2,7 @@
 
 Gera arquivos de remessa de Nota Fiscal de Serviço de Comunicação de acordo com convênio CONFAZ 115/03.
 
-## INSTALAÇÃO
+## **INSTALAÇÃO**
 
 ### Requisitos 
 
