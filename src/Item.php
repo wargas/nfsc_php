@@ -3,7 +3,7 @@
 namespace Nfsc;
 
 
-class Item extends MakeInterface {
+class Item extends Nfsc {
 
     public function __construct($data)
     {

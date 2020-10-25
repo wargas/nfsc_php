@@ -3,7 +3,7 @@
 namespace Nfsc;
 
 
-class Cadastro extends MakeInterface {
+class Cadastro extends Nfsc {
 
     public function __construct($data)
     {

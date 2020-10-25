@@ -3,7 +3,7 @@
 namespace Nfsc;
 
 
-class Mestre extends MakeInterface
+class Mestre extends Nfsc
 {
 
     public function __construct($data)
