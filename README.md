@@ -116,3 +116,7 @@ Se der tudo certo vc obterá uma resposta como esta:
   }
 }
 ```
+
+As infos que serão retornadas podem ser alteradas nos arquivos situados na pasta `  src/data `, adicionando o info e nome da coluna que o usuário queira que apareça.
+
+Para baixar o arquivo zip, basta chamar a seguinte url ` http://url_do-projeto/baixadas/2001/2001.zip `, substituindo pelo valor da competência que se deseja baixar.
