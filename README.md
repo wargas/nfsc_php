@@ -119,6 +119,6 @@ Se der tudo certo vc obterá uma resposta como esta:
 
 As infos que serão retornadas podem ser alteradas nos arquivos situados na pasta `  src/data `, adicionando o info e nome da coluna que o usuário queira que apareça, de acordo com imagem abaixo:
 
-![](https://sefaz-ce.s3.amazonaws.com/images/20201025093500_image.png)
+![Image](https://sefaz-ce.s3.amazonaws.com/images/20201025093500_image.png)
 
 Para baixar o arquivo zip, basta chamar a seguinte url ` http://url_do-projeto/baixadas/2001/2001.zip `, substituindo pelo valor da competência que se deseja baixar.
