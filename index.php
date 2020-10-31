@@ -18,6 +18,8 @@ $app->post('/', function(Request $request, Response $response) {
     $cadastro = new Nfsc\Cadastro($data);
     $item = new Nfsc\Item($data);
 
+    echo $mestre->getFileName();
+
     // $mestre->generateFile();
     // $cadastro->generateFile();
     // $item->generateFile();
