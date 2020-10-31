@@ -22,7 +22,7 @@ $app->post('/', function(Request $request, Response $response) {
     $cadastro->generateFile();
     $item->generateFile();
 
-    // $zip = new ZipArchive();
+    $zip = new ZipArchive();
 
     // $zip->open("geradas/{$data->competencia}/{$data->competencia}.zip", ZipArchive::CREATE);
 
