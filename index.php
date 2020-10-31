@@ -32,19 +32,19 @@ $app->post('/', function(Request $request, Response $response) {
 
     $zip->close();
 
-    // return $response->withJson([
-    //     "arquivos" => [
-    //         "mestre" => $mestre->getFileName(),
-    //         "cadastro" => $cadastro->getFileName(),
-    //         "item" => $item->getFileName(),
-    //         "zip" => "geradas/{$data->competencia}/{$data->competencia}.zip"
-    //     ],
-    //     "infos" => [
-    //         "mestre" => $mestre->info(),
-    //         "cadastro" => $cadastro->info(),
-    //         "item" => $item->info(),            
-    //     ]  
-    // ]);
+    return $response->withJson([
+        "arquivos" => [
+            "mestre" => $mestre->getFileName(),
+            "cadastro" => $cadastro->getFileName(),
+            "item" => $item->getFileName(),
+            "zip" => "geradas/{$data->competencia}/{$data->competencia}.zip"
+        ],
+        "infos" => [
+            "mestre" => $mestre->info(),
+            "cadastro" => $cadastro->info(),
+            "item" => $item->info(),            
+        ]  
+    ]);
 });
 
 $app->get('/', function(Request $request, Response $response) use($app) {
