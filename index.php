@@ -14,9 +14,9 @@ $app->post('/', function(Request $request, Response $response) {
 
     $data = json_decode(file_get_contents('php://input'));
     
-    // $mestre = new Nfsc\Mestre($data);
-    // $cadastro = new Nfsc\Cadastro($data);
-    // $item = new Nfsc\Item($data);
+    $mestre = new Nfsc\Mestre($data);
+    $cadastro = new Nfsc\Cadastro($data);
+    $item = new Nfsc\Item($data);
 
     // $mestre->generateFile();
     // $cadastro->generateFile();
