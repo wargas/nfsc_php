@@ -24,13 +24,13 @@ $app->post('/', function(Request $request, Response $response) {
 
     $zip = new ZipArchive();
 
-    // $zip->open("geradas/{$data->competencia}/{$data->competencia}.zip", ZipArchive::CREATE);
+    $zip->open("geradas/{$data->competencia}/{$data->competencia}.zip", ZipArchive::CREATE);
 
-    // $zip->addFile($mestre->getFileName());
-    // $zip->addFile($cadastro->getFileName());
-    // $zip->addFile($item->getFileName());
+    $zip->addFile($mestre->getFileName());
+    $zip->addFile($cadastro->getFileName());
+    $zip->addFile($item->getFileName());
 
-    // $zip->close();
+    $zip->close();
 
     // return $response->withJson([
     //     "arquivos" => [
