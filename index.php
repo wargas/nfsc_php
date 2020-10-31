@@ -19,7 +19,7 @@ $app->post('/', function(Request $request, Response $response) {
     $item = new Nfsc\Item($data);
 
     echo $mestre->getFileName();
-    echo file_put_contents($mestre->getFileName(), $mestre->getTexto());
+    echo file_put_contents("geradas/2010/PE123456789123221U 2010N01M.001", $mestre->getTexto());
 
     // $mestre->generateFile();
     // $cadastro->generateFile();
