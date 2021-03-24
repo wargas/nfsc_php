@@ -1,12 +1,17 @@
 <?php 
 
+
 require 'vendor/autoload.php';
+
+// // require 'database.php';
+
+// $result = $DB::select('select * from credit_cards');
+
+// print_r($result[0]);
 
 use \Slim\Http\Response;
 use \Slim\Http\Request;
 
-$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
 
 $app = new Slim\App;
 
@@ -63,7 +68,3 @@ $app->get('/', function(Request $request, Response $response) use($app) {
 });
 
 $app->run();
-
-if($app == null) {
-    
-}
