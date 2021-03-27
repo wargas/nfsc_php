@@ -8,6 +8,7 @@ require 'database.php';
     Se não for passada nenuma, será considerada a competencia atual
 */
 $competencia = isset($_GET["competencia"]) ? $_GET["competencia"] : date("ym");
+$emissao = isset($_GET["emissao"]) ? $_GET["emissao"] : date("Ymd");
 
 /* buscas as notas fiscais no banco */
 $notas = $DB::table("notasfiscais")->where("competencia", $competencia)->get();
@@ -18,8 +19,7 @@ $data = new stdClass();
 /* preenche a classe com os valores */
 $data->cnpj = "1234567891232";
 $data->competencia = $competencia;
-$data->emissao = "20210327";
-$data->numero = "100";
+$data->emissao = $emissao;
 $data->uf = "PE";
 $data->items = $notas->toArray();
 
