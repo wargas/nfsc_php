@@ -92,7 +92,7 @@ return [
         "tipo" => "N",
         "descricao" => "Número",
         "default" => 0,
-        "info" => "numero"
+        "info" => "nf_numero"
     ],
     [
         "posicao" => 10,

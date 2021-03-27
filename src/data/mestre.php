@@ -123,7 +123,7 @@ return [
         "tipo" => "N",
         "default" => 0,
         "descricao" => "Número",
-        "info" => "numero"
+        "info" => "nf_numero"
     ],
     [
         "posicao" => 13,
@@ -366,6 +366,6 @@ return [
         "tipo" => "X",
         "default" => "",
         "descricao" => "Código de Autenticação Digital do registro",
-        "info" => "codigo_validacao"
+        "info" => "nf_hash"
     ]
 ];

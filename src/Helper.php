@@ -11,7 +11,7 @@ class Helper {
     }
 
     public static function text($str, $tamanho) {
-        $str = utf8_decode($str);
+        // $str = utf8_decode($str);
         $str = substr($str, 0, $tamanho);
         return str_pad($str, $tamanho, " ", STR_PAD_RIGHT);
     }

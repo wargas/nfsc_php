@@ -179,7 +179,8 @@ return [
         "fim" => 243,
         "tipo" => "N",
         "descricao" => "Número",
-        "default" => 0
+        "default" => 0,
+        "info" => "nf_numero"
     ],
     [
         "posicao" => 19,

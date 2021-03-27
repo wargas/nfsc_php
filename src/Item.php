@@ -17,7 +17,7 @@ class Item extends Nfsc {
             $this->setCampo($line, 0, $item->documento);
             $this->setCampo($line, 1, $item->uf);
             $this->setCampo($line, 5, $this->data->emissao);
-            $this->setCampo($line, 8, $this->data->numero + $line);
+            $this->setCampo($line, 8, $item->nf_numero);
             $this->setCampo($line, 11, $item->fatura_id);
             $this->setCampo($line, 17, number_format($item->valor, 2));
             $this->setCampo($line, 20, number_format($item->valor, 2));

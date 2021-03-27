@@ -27,7 +27,7 @@ class Cadastro extends Nfsc {
             $this->setCampo($line, 12, $item->telefone);
             $this->setCampo($line, 13, $item->uf);
             $this->setCampo($line, 14, $this->data->emissao);
-            $this->setCampo($line, 17, $this->data->numero + $line);
+            $this->setCampo($line, 17, $item->nf_numero);
             $this->setCampo($line, 18, $item->ibge);
 
             $str = implode('', $this->lines[$line]);

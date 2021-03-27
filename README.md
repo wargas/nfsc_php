@@ -34,6 +34,7 @@ Faça uma requisição POST para a url da pasta onde o projeto foi criado. Passa
 	"uf": "PE",
 	"items": [
 		{
+      "nf_numero": 1,
 			"nome": "Joao da Silva",
 			"documento": "12345678910",
 			"uf": "PE",
@@ -49,7 +50,8 @@ Faça uma requisição POST para a url da pasta onde o projeto foi criado. Passa
 			"cidade": "Santa Filomena",
 			"ibge": "2612554"
 		},
-        {
+    {
+      "nf_numero": 2,
 			"nome": "Maria da Silva",
 			"documento": "99876543210",
 			"uf": "PE",
