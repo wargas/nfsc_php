@@ -24,7 +24,7 @@ class Mestre extends Nfsc
             $this->setCampo($line, 13, number_format($item->valor, 2));
             $this->setCampo($line, 14, number_format($item->valor, 2));
             $this->setCampo($line, 19, $this->data->competencia);
-            $this->setCampo($line, 20, $line + 1);
+            $this->setCampo($line, 20, $item->ref_item);
             $this->setCampo($line, 21, $item->telefone);
             $this->setCampo($line, 22, strlen($item->documento) > 11 ? 1 : 2);
             $this->setCampo($line, 23, strlen($item->documento) > 11 ? 1 : 3);
