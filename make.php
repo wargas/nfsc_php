@@ -1,7 +1,10 @@
 <?php
+
 header("content-type: application/json");
 require 'vendor/autoload.php';
 require 'database.php';
+
+try {
 
 /*
     obtem a competencia passava via get. 
@@ -17,10 +20,20 @@ $notas = $DB::table("notasfiscais")->where("competencia", $competencia)->get();
 $data = new stdClass();
 
 /* preenche a classe com os valores */
-$data->cnpj = "1234567891232";
+$data->cnpj = "18180990000152";
+$data->ie = "053027302";
+$data->razaosocial = "BITMAX INFORMATICA E TELECOMUNICACOES LTDA - ME";
+$data->municipio = "Araripina";
+$data->uf = "PE";
+$data->telefone = "telefone";
+$data->logradouro = "AVENIDA ANTONIO DE BARROS MUNIZ";
+$data->numero = "58";
+$data->complemento = "LOJA 07";
+$data->bairro = "CENTRO";
+$data->cep = "56.280-000";
+$data->responsavel = "Leonardo Pereira de Souza";
 $data->competencia = $competencia;
 $data->emissao = $emissao;
-$data->uf = "PE";
 $data->items = $notas->toArray();
 
 /* Gerar o mestre */
@@ -31,13 +44,33 @@ $mestre->generateFile();
 $cadastro = new Nfsc\Cadastro($data);
 $cadastro->generateFile();
 
-/* Gerar o cadastro */
+/* Gerar o item */
 $items = new Nfsc\Item($data);
 $items->generateFile();
 
+
+$sintegra = new Nfsc\Sintegra\Sintegra($data);
+$sintegra->generateFile();
+
+$zip = new ZipArchive();
+
+$zip->open("geradas/{$data->competencia}/{$data->competencia}.zip", ZipArchive::CREATE);
+
+$zip->addFile($mestre->getFileName());
+$zip->addFile($cadastro->getFileName());
+$zip->addFile($items->getFileName());
+
+$zip->close();
+
 //** atualizar a tabela de acordo com o arquivo de mestre  **/
-foreach($mestre->info() as $info) {
+foreach ($mestre->info() as $info) {
     $DB::table("notasfiscais")
         ->where("nf_numero",  intval($info["nf_numero"]))
         ->update(['nf_hash' => $info['nf_hash']]);
+}
+
+echo json_encode(["competencia" => $competencia, "msg" => "arquivos gerados com sucesso"]);
+
+} catch (Exception $e) {
+    echo json_encode(["error"=> $e->getMessage()]);
 }

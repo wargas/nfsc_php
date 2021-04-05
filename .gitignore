@@ -1,4 +1,4 @@
 vendor
 geradas/*
-!geradas/.keep
 .env
+!geradas/.keep

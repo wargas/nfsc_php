@@ -15,6 +15,7 @@
     "require": {
         "slim/slim": "3.*",
         "vlucas/phpdotenv": "^5.2",
-        "illuminate/database": "^7.30"
+        "illuminate/database": "^7.30",
+        "nesbot/carbon": "^2.46"
     }
 }
