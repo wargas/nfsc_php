@@ -82,7 +82,7 @@ class Sintegra
         $registro = new Registro($this->campos[2]['campos']);
         $registro->setCampo("02", $inicio->format('Ymd'));
         $registro->setCampo("03", $inicio->addMonth(1)->subDays(1)->format('Ymd'));
-        $registro->setCampo("04", " ");
+        $registro->setCampo("04", "1");
         $registro->setCampo("05", " ");
         $registro->setCampo("06", "SERVICO DE INTERNET");
         $registro->setCampo("07", "mbps");
@@ -101,13 +101,13 @@ class Sintegra
     {
         foreach ($this->data->items as $item) {
             $registro = new Registro($this->campos[3]['campos']);
-            $registro->setCampo("02", $item->documento);
-            $registro->setCampo("03", "55");
-            $registro->setCampo("04", "1 ");
-            $registro->setCampo("05", "1 ");
-            $registro->setCampo("06", $item->nf_numero);
-            $registro->setCampo("07", $item->cfop);
-            $registro->setCampo("08", "1");
+            $registro->setCampo("02", 'INSENTO');
+            $registro->setCampo("03", "ISENTO");
+            $registro->setCampo("04", "21");
+            $registro->setCampo("05", "1");
+            $registro->setCampo("06", "1");
+            $registro->setCampo("07", $item->nf_numero);
+            $registro->setCampo("08", $item->cfop);
             $registro->setCampo("09", "1");
             $registro->setCampo("10", $item->emissao);
             $registro->setCampo("11", $item->uf);
@@ -117,7 +117,7 @@ class Sintegra
             $registro->setCampo("15", "0");
             $registro->setCampo("16", "0");
             $registro->setCampo("17", "0");
-            $registro->setCampo("18", "0");
+            $registro->setCampo("18", "N");
 
 
             $this->registros[] = $registro;
@@ -162,7 +162,10 @@ class Sintegra
         $registro->setCampo("07", $this->countRegistrosTipo('76'));
         $registro->setCampo("08", "77");
         $registro->setCampo("09", $this->countRegistrosTipo('77'));
-        $registro->setCampo("10", " ");
+        $registro->setCampo("10", "99");
+        $registro->setCampo("11", count($this->registros) + 1);
+        $registro->setCampo("12", " ");
+        $registro->setCampo("13", "1");
 
         $this->registros[] = $registro;
     }

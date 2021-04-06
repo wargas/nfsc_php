@@ -712,15 +712,33 @@ return [
             ],
             [
                 "campo" => "10",
+                "descricacao" => "Tipo a ser totalizado",
+                "valor" => "99",
+                "tamanho" => 2,
+                "inicio" => 31,
+                "fim" => 32,
+                "tipo" => "N"
+            ],
+            [
+                "campo" => "11",
+                "descricacao" => "Total de registros",
+                "valor" => "",
+                "tamanho" => 8,
+                "inicio" => 33,
+                "fim" => 40,
+                "tipo" => "N"
+            ],
+            [
+                "campo" => "12",
                 "descricacao" => "Espaços em branco",
                 "valor" => " ",
-                "tamanho" => 65,
+                "tamanho" => 55,
                 "inicio" => 61,
                 "fim" => 125,
                 "tipo" => "X"
             ],
             [
-                "campo" => "11",
+                "campo" => "13",
                 "descricacao" => "Total de registros",
                 "valor" => "1",
                 "tamanho" => 1,
