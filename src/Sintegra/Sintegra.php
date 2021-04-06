@@ -2,6 +2,8 @@
 
 namespace Nfsc\Sintegra;
 
+use Exception;
+
 class Sintegra
 {
 
@@ -171,14 +173,22 @@ class Sintegra
             return $item->getLine();
         }, $this->registros);
 
-        return implode("\n", $items);
+        return implode("\r\n", $items);
+    }
+
+    public function getFileName() {
+        return "geradas/{$this->data->competencia}/{$this->data->competencia}-sintegra.txt";
     }
 
     public function generateFile()
     {
         if (!file_exists("geradas/{$this->data->competencia}")) {
-            mkdir("geradas/{$this->data->competencia}");
+            if(!mkdir("geradas/{$this->data->competencia}")) {
+                throw new Exception('Erro ao gerar pasta');
+            }
         }
-        file_put_contents("geradas/{$this->data->competencia}/{$this->data->competencia}-sintegra.txt", $this->getLines());
+        if(!file_put_contents($this->getFileName(), $this->getLines())) {
+            throw new Exception('Erro ao gerar o arquivo sintegra');
+        }
     }
 }
